@@ -3,9 +3,11 @@
 cd work/campsited/
 gnome-terminal --tab \
 	       --title="riails s [campsited]" \
-	       -- bash -c "rails s; zsh"
+	       -- bash -c "rails s; zsh" \
+	       &> /dev/null
 echo -e "\n"
 cal
+echo -e "Welcome back `whoami`! Today is `date +%A`, which is the best day of the entire week!\n"
 echo "===="
 echo $(curl -s http://api.icndb.com/jokes/random | jq -r '.value.joke')
 echo "===="
